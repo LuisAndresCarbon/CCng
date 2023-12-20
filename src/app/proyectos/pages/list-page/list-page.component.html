@@ -1,0 +1,22 @@
+<h2>Tabla de Usuarios</h2>
+<table>
+  <thead>
+    <tr>
+      <th>Nombre </th>
+      <th>Email</th>
+      <th>Contraseña</th>
+      <th>Área</th>
+      <th>Rol</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let users of usuarios">
+      <td>{{users.usuario}}</td>
+      <td>{{users.usuario_email}}</td>
+      <td>{{users.usuario_pw}}</td> <!-- Se muestra asteriscos en lugar de la contraseña real -->
+      <td>{{users.area}}</td>
+      <td>{{users.role}}</td>
+    </tr>
+    <!-- Agrega más filas según sea necesario -->
+  </tbody>
+</table>
