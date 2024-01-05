@@ -14,7 +14,11 @@ export class UtilApiService {
     } // sendPostRequest
 
     public sendGetRequest( url: string , token: any): Observable<any> {
-        let headers = new HttpHeaders({ 'Content-Type': 'application/json', 'authorization': ': ' + token + '' });
+        console.log("url", url , "token",token)
+        const headers = new HttpHeaders({
+            'Authorization': `Bearer ${token}`
+          });
+       // let headers = new HttpHeaders({ 'Content-Type': 'application/json', 'Authorization': ': ' + token + '' });
         return this._http.get<any>(url, { headers: headers });
     } // sendGetRequest
     public sendPutRequest(aEnviar: any, url: string): Observable<any> {

@@ -15,7 +15,8 @@ export class LayoutPageComponent {
     {label:'new', icon: 'new', url:'./new-project'},
     {label:'search', icon: 'search', url:'./search'}
   ]
-  fnback(){
+  logOut(){
+    sessionStorage.clear()
     this.router.navigate(["/auth/login"]);
   }
 }

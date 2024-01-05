@@ -1,5 +1,5 @@
 
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { UsuarioService } from '../../services/auth.service';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
@@ -10,7 +10,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
   styles: [
   ],
 })
-export class LoginPageComponent {
+export class LoginPageComponent implements OnInit{
   constructor(private usuarioservice : UsuarioService, private router: Router,private snackBar : MatSnackBar){}
 
   usuario_email: string = '';
@@ -19,6 +19,14 @@ export class LoginPageComponent {
 
   submitted: boolean = false;
   loginError: boolean = false;
+
+
+  ngOnInit(){
+      sessionStorage.getItem('access') ? this.router.navigate(["/proyectos/list"]) : this.router.navigate(["/auth/login"]) ;
+ 
+  }
+
+
   iniciarSesion(form: NgForm) {
     this.submitted = true;
   
@@ -26,10 +34,11 @@ export class LoginPageComponent {
       this.usuarioservice.iniciarSesion(this.usuario_email, this.usuario_pw)
         .subscribe(
           response => {
-            if (response && response.id) {
+            if (response && response.access) {
               // La respuesta fue exitosa (estado 2xx)
               console.log('Inicio de sesión exitoso:', response);
-  
+              sessionStorage.setItem('access',response.refresh);
+              this.router.navigate(["/proyectos/list"]);
               // Mostrar mensaje de éxito con MatSnackBar
               this.snackBar.open('Inicio de sesión exitoso', 'Cerrar', {
                 duration: 3000, // Duración del mensaje en milisegundos
@@ -64,7 +73,7 @@ export class LoginPageComponent {
           }
           
         );
-        this.router.navigate(["/proyectos/list"]);
+      
     }
 
   }
