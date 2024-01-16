@@ -1,38 +1,71 @@
 import { NgModule } from '@angular/core';
-
-import { MatAutocompleteModule } from '@angular/material/autocomplete';
-import { MatButtonModule } from '@angular/material/button';
-import { MatCardModule } from '@angular/material/card';
-import { MatChipsModule } from '@angular/material/chips';
-import { MatDialogModule } from '@angular/material/dialog';
-import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatGridListModule } from '@angular/material/grid-list';
-import { MatIconModule } from '@angular/material/icon';
-import { MatInputModule } from '@angular/material/input';
-import { MatListModule } from '@angular/material/list';
-import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
-import { MatSelectModule } from '@angular/material/select';
-import { MatSidenavModule } from '@angular/material/sidenav';
-import { MatSnackBarModule } from '@angular/material/snack-bar';
-import { MatToolbarModule } from '@angular/material/toolbar';
+import { ButtonModule } from 'primeng/button';
+import { CardModule } from 'primeng/card';
+import { InputTextModule } from 'primeng/inputtext';
+import { CalendarModule } from "primeng/calendar";
+import { ChipsModule } from "primeng/chips";
+import { DropdownModule } from "primeng/dropdown";
+import { InputMaskModule } from "primeng/inputmask";
+import { InputNumberModule } from "primeng/inputnumber";
+import { CascadeSelectModule } from "primeng/cascadeselect";
+import { MultiSelectModule } from "primeng/multiselect";
+import { InputTextareaModule } from "primeng/inputtextarea";
+import { AutoCompleteModule } from "primeng/autocomplete";
+import { ToastModule } from 'primeng/toast';
+import { ToolbarModule } from "primeng/toolbar";
+import { ContextMenuModule } from "primeng/contextmenu";
+import { DialogModule } from "primeng/dialog";
+import { FileUploadModule } from "primeng/fileupload";
+import { ProgressBarModule } from "primeng/progressbar";
+import { RatingModule } from "primeng/rating";
+import { AvatarModule } from "primeng/avatar";
+import { SplitButtonModule } from "primeng/splitbutton";
+import { SidebarModule } from "primeng/sidebar";
+import { MenuModule } from "primeng/menu";
+import { RippleModule } from "primeng/ripple";
+import { TableModule } from "primeng/table";
+import { SlideMenuModule } from "primeng/slidemenu";
+import { RouterModule } from "@angular/router";
+import { StepsModule} from 'primeng/steps';
+import { ConfirmDialogModule } from 'primeng/confirmdialog';
+import { SplitterModule } from 'primeng/splitter';
+import { ListboxModule } from 'primeng/listbox';
 
 @NgModule({
   exports: [
-    MatAutocompleteModule,
-    MatButtonModule,
-    MatCardModule,
-    MatChipsModule,
-    MatDialogModule,
-    MatFormFieldModule,
-    MatGridListModule,
-    MatIconModule,
-    MatInputModule,
-    MatListModule,
-    MatProgressSpinnerModule,
-    MatSelectModule,
-    MatSidenavModule,
-    MatSnackBarModule,
-    MatToolbarModule,
+    ButtonModule,
+    CardModule,
+    InputTextModule ,
+    CalendarModule,
+    ChipsModule,
+    DropdownModule,
+    InputMaskModule,
+    InputNumberModule,
+    CascadeSelectModule,
+    MultiSelectModule,
+    InputTextareaModule,
+    AutoCompleteModule,
+    ToastModule,
+    ToolbarModule,
+    ContextMenuModule,
+    DialogModule,
+    FileUploadModule,
+    ProgressBarModule,
+    RatingModule,
+    AvatarModule,
+    SplitButtonModule,
+    SidebarModule,
+    MenuModule,
+    RippleModule,
+    TableModule,
+    SlideMenuModule,
+    RouterModule,
+    StepsModule,
+    ConfirmDialogModule,
+    SplitterModule,
+    ListboxModule,
+    
   ]
 })
-export class MaterialModule { }
+
+export class MaterialModule {}

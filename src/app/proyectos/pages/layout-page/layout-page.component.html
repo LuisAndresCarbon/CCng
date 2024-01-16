@@ -1,45 +1,10 @@
 
-<mat-sidenav-container fullscreen>
-    <mat-sidenav #sidenav mode="push" [ngStyle]="{width:'250px'}">
+    <div style="background-color: rgb(0, 148, 110, 87)">
+        <button pButton icon="pi pi-bars" (click)="toggleSidenav(sidebar)"></button>
+        <span class="p-spacer"></span>
+        <button pButton (click)="logOut()">Logout</button>
+    </div>
 
-        <mat-toolbar style="background-color: rgb(61,184,123,71)">
-            <span>Menu</span>
-            <span class="spacer"></span>
-            <button mat-icon-button (click)="sidenav.toggle()">
-                <mat-icon>menu</mat-icon>
-            </button>
-        </mat-toolbar>
-<mat-nav-list>
-    <mat-list-item *ngFor="let item of sidebarItems"
-    [routerLink]="item.url"
-    (click)="sidenav.toggle()"
-    >
-        
-        <mat-icon matListItemIcon>{{ item.icon}}</mat-icon>
-        {{ item.label}}
-    </mat-list-item>
-</mat-nav-list>
-
-    </mat-sidenav>
-
-
-    <mat-toolbar style="background-color: rgb(0,148,110,87)">
-        <button mat-icon-button (click)="sidenav.toggle()">
-            <mat-icon>
-                menu
-            </mat-icon>
-        </button>
-        <span class="spacer">
-
-        </span>
-        <button mat-button (click)="logOut()">
-            Logout
-        </button>
-
-    </mat-toolbar>
-
-<div class="container">
-    <router-outlet></router-outlet>
-</div>
-
-</mat-sidenav-container>
+    <div class="container">
+        <router-outlet></router-outlet>
+    </div>

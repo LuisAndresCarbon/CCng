@@ -1,22 +1,56 @@
-<h2>Tabla de Usuarios</h2>
-<table>
-  <thead>
-    <tr>
-      <th>Nombre </th>
-      <th>Email</th>
-      <th>Contraseña</th>
-      <th>Área</th>
-      <th>Rol</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let users of usuarios">
-      <td>{{users.usuario}}</td>
-      <td>{{users.usuario_email}}</td>
-      <td>{{users.usuario_pw}}</td> <!-- Se muestra asteriscos en lugar de la contraseña real -->
-      <td>{{users.area}}</td>
-      <td>{{users.role}}</td>
-    </tr>
-    <!-- Agrega más filas según sea necesario -->
-  </tbody>
-</table>
+<section class="container">
+  <div>
+    <div class="flex align-items-center justify-content-between fondo">
+      <div>
+        <h1>Create New Project </h1>
+        <i>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis asperiores aliquam, voluptatum architecto
+          minus recusandae inventore non laudantium alias quisquam laborum fugit vero a iure vel dolorum saepe veniam
+          consequatur!</i>
+      </div>
+    </div>
+  </div>
+</section>
+ <div class="grid">
+      <div class="col-12 md:col-6">
+        <div class="card p-fluid">
+         
+          <div class="field">
+            <span class="p-float-label">
+              <input formControlName="Project" pInputText id="Project" required autofocus>
+              <label htmlFor="Project">Project ID</label>
+            </span>
+          </div>
+
+          <div class="field"><br>
+           <span class="p-float-label">
+          <input formControlName="aggregationId" pInputText id="aggregationId" required autofocus>
+          <label htmlFor="aggregationId">aggregationId</label>
+        </span>
+          </div>
+          
+          <div class="field"><br>
+            <div class="col-12 md:col-6">
+              <span class="p-float-label">
+                <input formControlName="name" pInputText id="name" required autofocus>
+                <label htmlFor="name">Project Name</label>
+      
+              </span>
+        </div>
+        
+        <div class="card p-fluid">
+          <h5>___________________________________</h5>
+          <div class="p-formgrid grid">
+            <div class="field col">
+              <span class="p-float-label">
+                <input formControlName="state" pInputText id="state" required autofocus>
+                <label htmlFor="state">State</label>
+      
+              </span>
+            </div>
+            <div class="field col"><br>
+              <p-dropdown formControlName="municipality" [options]="opciones" id="municipality" placeholder="municipality"
+              [showClear]="true"></p-dropdown>
+            </div>
+          </div>
+        </div>
+      </div>

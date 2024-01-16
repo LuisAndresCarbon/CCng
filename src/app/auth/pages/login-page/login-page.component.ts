@@ -3,16 +3,21 @@ import { Component, OnInit } from '@angular/core';
 import { UsuarioService } from '../../services/auth.service';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
-import { MatSnackBar } from '@angular/material/snack-bar';
+import { MessageService } from 'primeng/api';
+import { AlertaComponent } from 'src/app/util/alerta.component';
+
 @Component({
   selector: 'auth-login-page',
   templateUrl: './login-page.component.html',
   styles: [
   ],
+  providers: [
+    MessageService, // Agrega MessageService como un proveedor aquí
+  ],
 })
 export class LoginPageComponent implements OnInit{
-  constructor(private usuarioservice : UsuarioService, private router: Router,private snackBar : MatSnackBar){}
-
+  constructor(private usuarioservice : UsuarioService, private router: Router,private messageService: MessageService,){}
+  mensajeAlerta!: AlertaComponent
   usuario_email: string = '';
   usuario_pw: string = '';
   errorMessage: string = '';
@@ -40,10 +45,8 @@ export class LoginPageComponent implements OnInit{
               sessionStorage.setItem('access',response.refresh);
               this.router.navigate(["/proyectos/list"]);
               // Mostrar mensaje de éxito con MatSnackBar
-              this.snackBar.open('Inicio de sesión exitoso', 'Cerrar', {
-                duration: 3000, // Duración del mensaje en milisegundos
-                panelClass: ['success-snackbar'] // Clase CSS personalizada para estilo de éxito
-              });
+              this.messageService.add({ severity: 'error', summary: 'No es posible ingresar', detail: 'Porfavor verifique todos los campos' });
+             
   
               // Limpiar mensaje de error
               this.loginError = false;
@@ -53,9 +56,6 @@ export class LoginPageComponent implements OnInit{
               console.log('Error en el inicio de sesión:', response);
               this.loginError = true;
               this.errorMessage = 'Credenciales incorrectas. Por favor, inténtelo de nuevo.';
-  
-              // Cerrar el MatSnackBar si estaba abierto (para evitar mensajes contradictorios)
-              this.snackBar.dismiss();
             }
   
             // Reiniciar el formulario y otras variables necesarias
@@ -66,10 +66,8 @@ export class LoginPageComponent implements OnInit{
             // Manejar errores, por ejemplo, mostrar un mensaje de error
             console.error(error);
             this.loginError = true;
-            this.errorMessage = 'Error en el servidor. Por favor, inténtelo de nuevo más tarde.';
-  
-            // Cerrar el MatSnackBar si estaba abierto (para evitar mensajes contradictorios)
-            this.snackBar.dismiss();
+            let mensaje = <any>error;
+        this.mensajeAlerta.alerta("AVISO", "", mensaje.message, "");
           }
           
         );

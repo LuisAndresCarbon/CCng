@@ -7,11 +7,12 @@ import { UsuarioService } from '../../../../app/auth/services/auth.service';
 @Component({
   selector: 'app-list-page',
   templateUrl: './list-page.component.html',
-  styles: [
-  ]
+  styles:['']
 })
 export class ListPageComponent implements OnInit{
-
+   opciones = [  { label: 'Digital', value: 'Digital' },
+   { label: 'Impreso', value: 'Impreso' },
+ { label: 'Tarjeta plástica', value: 'Tarjeta plástica' }];
    public refreshToken :  any = '';
   public usuarios: any[] = [];
   constructor(private projectusuarioservice : ProjectUsuarioService ,

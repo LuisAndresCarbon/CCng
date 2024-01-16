@@ -1,27 +1,42 @@
-<div class="flex flex-column">
-    <span class="text-lg mb-4"> REGISTRO</span>
-    <mat-form-field>
-        <mat-label>
-            Usuario
-        </mat-label>
-        <input type="text" matInput placeholder="nombre de usuario">
-    </mat-form-field>
-    <mat-form-field>
-        <mat-label>
-            Nombre
-        </mat-label>
-        <input type="text" matInput placeholder="nombre de usuario">
-    </mat-form-field>
-    <mat-form-field>
-        <mat-label>
-            Contraseña
-        </mat-label>
-        <input type="password" matInput placeholder="Contraseña">
-    </mat-form-field>
-    <button mat-button mat-flat-button color="primary">
-        <mat-icon>save</mat-icon>
-        Crear cuenta</button>
-        <div class="flex justify-content-end mt-5">
-            <a routerLink="/auth/login">¿No tienes cuenta?</a>
+<section id="wrapper">
+    <div class="fondo-imagen">
+        <div class="login-box">
+            <div class="login-card tamano560">
+                <h3 class="box-title m-b-20 text-center">Registro</h3>
+                  
+                <form>
+                    <div class="field">
+                        <label for="usuarioRegistro">Usuario</label>
+                        <input
+                          id="usuarioRegistro"
+                          class="p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full"
+                          placeholder="Nombre de usuario"
+                        />
+                    </div>
+                    
+                    <div class="field">
+                        <label for="contrasenaRegistro">Contraseña</label>
+                        <input
+                          id="contrasenaRegistro"
+                          class="p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full"
+                          placeholder="Contraseña"
+                          type="password"
+                        />
+                    </div>
+                    
+                    <div class="form-group text-center m-t-20">
+                        <div class="col-xs-12">
+                            <button pButton class="p-button-danger" type="button">Crear cuenta</button>
+                            <div class="flex-col-c p-t-60">
+                                <a routerLink="/auth/login" class="txt2">¿Ya tienes cuenta? Inicia sesión</a>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
         </div>
-</div>
+    </div>
+</section>
+
+<p-toast position="top-right"></p-toast>
+
