@@ -23,4 +23,11 @@ export class LayoutPageComponent {
   public toggleSidenav(sidebar: any): void {
     sidebar.toggle();
   }
+  @ViewChild('sidebarRef') sidebarRef!: Sidebar;
+
+  closeCallback(e:any): void {
+      this.sidebarRef.close(e);
+  }
+
+  sidebarVisible: boolean = false;
 }

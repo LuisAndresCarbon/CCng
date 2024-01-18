@@ -1,71 +1,34 @@
-
-<style>
-    body {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
-      margin: 0;
-      background: linear-gradient(rgba(61, 184, 123, 0.71), rgba(255, 255, 255, 0.71));
-    }
-
-    .login-container {
-      text-align: center;
-    }
-
-    .flex {
-      display: flex;
-    }
-
-    .flex-column {
-      flex-direction: column;
-    }
-
-    #usuario_email {
-      margin: 10px;
-      padding: 8px;
-      border-radius: 5px;
-      border: 1px solid #ccc;
-    }
-    #usuario_pw {
-      margin: 10px;
-      padding: 8px;
-      border-radius: 5px;
-      border: 1px solid #ccc;
-    }
-
-    #loginBtn {
-      margin-top: 10px;
-      padding: 10px;
-      background-color: rgb(61, 184, 123);
-      color: #fff;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-
-    #loginBtn:hover {
-      background-color: rgb(48, 143, 93);
-    }
-    .success-snackbar {
-  background-color: #43a047; 
-  color: #fff; 
-}
-  </style>
-<body>
-  <div class="login-container">
-    <img src="../../../../assets/CC_Isotipo.png" alt="Icono de la empresa" width="59" height="80">
-    <h1>CANOPIA CARBON</h1>
-    <form #loginForm="ngForm" (ngSubmit)="iniciarSesion(loginForm)" class="flex flex-column">
-      <input id="usuario_email" [(ngModel)]="usuario_email" placeholder="Correo electrónico" type="text" matInput name="usuarioEmail" required>
-
-      <input id="usuario_pw" [(ngModel)]="usuario_pw" placeholder="contraseña" type="password" matInput name="usuarioPw" required>
-
-      <button id="loginBtn" type="submit">Iniciar Sesión</button>
-    </form>
-    <div class="flex justify-content-end mt-5">
-        <a routerLink="/auth/new-account">¿Ya tienes cuenta?</a>
+<div class="bodylogin">
+    <div class="login-card tamano560">
+      <img src="../../../../assets/CC_Isotipo.png" alt="Icono de la empresa" width="59" height="80">
+      <h1>CANOPIA CARBON</h1>
+      <form #loginForm="ngForm" (ngSubmit)="iniciarSesion(loginForm)" class="flex flex-column">
+        <div class="card flex justify-content-center">
+        <div class="field">
+          <span class="p-float-label">
+            <input class="p-inputtext-sm" id="usuario_email" [(ngModel)]="usuario_email" name="usuarioEmail" placeholder="Correo electrónico" pInputText required autofocus>
+            <label htmlFor="usuarioEmail">Email</label>
+          </span>
+        </div>
+        </div>
+        <div class="card flex justify-content-center">
+        <div class="field">
+          <span class="p-float-label">
+            <input class="p-inputtext-sm" id="usuario_pw" [(ngModel)]="usuario_pw" name="usuarioPw" placeholder="password" type="password" pInputText required autofocus>
+            <label htmlFor="password">password</label>
+          </span>
+        </div>
       </div>
+        <div class="card flex justify-content-center">
+        <div class="field">
+          <button pButton class="p-button-success" id="loginBtn" type="submit">To access</button>
+        </div>
+      </div>
+      </form>
+      <div class="flex-col-c p-t-60">
+        <a routerLink="/auth/new-account" class="txt2">
+          ¿Create Account?
+        </a>
+      </div>
+    </div>
   </div>
-</body>
-

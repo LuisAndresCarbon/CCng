@@ -3,54 +3,49 @@
     <div class="flex align-items-center justify-content-between fondo">
       <div>
         <h1>Create New Project </h1>
-        <i>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis asperiores aliquam, voluptatum architecto
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis asperiores aliquam, voluptatum architecto
           minus recusandae inventore non laudantium alias quisquam laborum fugit vero a iure vel dolorum saepe veniam
-          consequatur!</i>
+          consequatur!</p>
       </div>
     </div>
   </div>
 </section>
- <div class="grid">
-      <div class="col-12 md:col-6">
-        <div class="card p-fluid">
-         
-          <div class="field">
-            <span class="p-float-label">
-              <input formControlName="Project" pInputText id="Project" required autofocus>
-              <label htmlFor="Project">Project ID</label>
-            </span>
-          </div>
-
-          <div class="field"><br>
-           <span class="p-float-label">
-          <input formControlName="aggregationId" pInputText id="aggregationId" required autofocus>
-          <label htmlFor="aggregationId">aggregationId</label>
-        </span>
-          </div>
-          
-          <div class="field"><br>
-            <div class="col-12 md:col-6">
-              <span class="p-float-label">
-                <input formControlName="name" pInputText id="name" required autofocus>
-                <label htmlFor="name">Project Name</label>
-      
-              </span>
-        </div>
-        
-        <div class="card p-fluid">
-          <h5>___________________________________</h5>
-          <div class="p-formgrid grid">
-            <div class="field col">
-              <span class="p-float-label">
-                <input formControlName="state" pInputText id="state" required autofocus>
-                <label htmlFor="state">State</label>
-      
-              </span>
-            </div>
-            <div class="field col"><br>
-              <p-dropdown formControlName="municipality" [options]="opciones" id="municipality" placeholder="municipality"
-              [showClear]="true"></p-dropdown>
-            </div>
-          </div>
-        </div>
-      </div>
+<div class="formgrid grid">
+  <div class="field col-12 md:col-6">
+    <span class="p-float-label">
+      <input id="Project" type="text" class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full">
+      <label for="Project">Project ID</label>
+  </span>
+  </div>
+  <div class="field col-12 md:col-6">
+    <span class="p-float-label">
+      <input id="aggregationId" type="text" class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full">
+      <label for="aggregationId">aggregationId</label>
+    </span>
+  </div>
+  <div class="field col-12">
+    <span class="p-float-label">
+      <label for="Project_name">Project Name</label>
+      <input id="Project_name" type="text" rows="4" class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full">
+    </span>  
+  </div>
+  <div class="field col-12 md:col-6">
+    <span class="p-float-label">
+      <input id="State" type="text" class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full">
+      <label for="State">State</label>
+    </span>
+  </div>
+  
+  <div class="field col-12 md:col-6">
+    <div class="field col">
+    <select id="state" class="w-full text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round outline-none focus:border-primary" style="appearance: auto">
+        <option>municipality</option>
+        <option>California</option>
+        <option>Florida</option>
+        <option>Ohio</option>
+        <option>Washington</option>
+    </select>
+    </div>
+</div>
+<button type="button" class="bg-green-500 border-green-500 px-3 py-2 text-base border-1 border-solid border-round cursor-pointer transition-all transition-duration-200 hover:bg-green-500 hover:border-green-500 active:bg-green-700 active:border-green-700">Save</button>
+</div>
